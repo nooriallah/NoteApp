@@ -77,7 +77,7 @@
                 notes.forEach(note => {
                     note.onkeyup = () => {
                         updateStorage()
-                        console.log("Key write");
+                        console.log("Writing..");
                     }
                 });
             }
@@ -86,7 +86,7 @@
                 Array.from(titles).forEach((title => {
                     title.addEventListener("keyup", () => {
                         updateStorage();
-                        console.log("Title changed");
+                        console.log("Title changing...");
                     })
                 }))
             }
