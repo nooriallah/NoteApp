@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Note App</title>
+
+        <link rel="stylesheet" href="css/custom.css ">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="note-wrapper">
+                <h1>Notes</h1>
+                <button class="btn-add-note">Create Notes +</button>
+
+                <div class="textarea-container">
+                    <div class="textarea-wrapper">
+                        <p class="note-title" contenteditable="true">Note Title - 1</p>
+                        <p class="textarea" contenteditable="true"></p>
+                        <button class="btn-delete-note">&times;</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <script>
+
+        let textareaContainer = document.querySelector(".textarea-container");
+        let btnAdd = document.querySelector(".btn-add-note")
+        let notes = document.querySelectorAll(".textarea")
+        let titles = document.querySelectorAll(".note-title")
+        let i = 0;
+        // when clcik over add note button 
+        btnAdd.addEventListener("click", () => {
+            i++;
+
+            let textareaWrapper = document.createElement("div");
+            let noteTitle = document.createElement("p")
+            let textarea = document.createElement("p")
+            let btnDelete = document.createElement("button");
+
+            textareaWrapper.className = "textarea-wrapper";
+
+            noteTitle.textContent = "Note title - " + i;
+            noteTitle.setAttribute("class", "note-title")
+            noteTitle.setAttribute("contenteditable", true)
+
+            textarea.setAttribute("contenteditable", true)
+            textarea.setAttribute("class", "textarea")
+
+            btnDelete.setAttribute("class", "btn-delete-note")
+
+            btnDelete.innerHTML = "&times;"
+
+            textareaWrapper.appendChild(noteTitle)
+            textareaWrapper.appendChild(textarea)
+            textareaWrapper.appendChild(btnDelete)
+            textareaContainer.appendChild(textareaWrapper)
+
+        })
+
+
+        textareaContainer.addEventListener("click", (evt) => {
+
+            if (evt.target.className == "btn-delete-note") {
+                console.log("Note deleted");
+                evt.target.parentElement.remove()
+                updateStorage()
+            }
+            else if (evt.target.className == "textarea") {
+                notes = document.querySelectorAll(".textarea")
+                notes.forEach(note => {
+                    note.onkeyup = () => {
+                        updateStorage()
+                        console.log("Key write");
+                    }
+                });
+            }
+            else if (evt.target.className == "note-title") {
+                titles = document.querySelectorAll(".note-title")
+                Array.from(titles).forEach((title => {
+                    title.addEventListener("keyup", () => {
+                        updateStorage();
+                        console.log("Title changed");
+                    })
+                }))
+            }
+
+        })
+
+        function updateStorage() {
+            localStorage.setItem("notes", textareaContainer.innerHTML)
+        }
+
+        function showNotes() {
+            textareaContainer.innerHTML = localStorage.getItem("notes")
+        };
+        showNotes()
+
+    </script>
+
+</html>

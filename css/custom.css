@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, lightgreen, lightblue);
+}
+
+.container {
+  max-width: 900px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 0 3rem;
+}
+.container .note-wrapper {
+  margin-top: 3rem;
+}
+.container .note-wrapper h1 {
+  margin-bottom: 1rem;
+  font-size: 55px;
+  color: #290029;
+}
+.container .note-wrapper .btn-add-note {
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  background-color: purple;
+  color: #fff;
+}
+.container .note-wrapper .btn-add-note:active {
+  background-color: #5a005a;
+}
+.container .note-wrapper .textarea-container .textarea-wrapper {
+  width: 450px;
+  min-height: 200px;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  background-color: #fff;
+  position: relative;
+  border-radius: 10px;
+  position: relative;
+}
+.container .note-wrapper .textarea-container .textarea-wrapper .note-title {
+  transform: translateY(-30px);
+  position: absolute;
+  min-width: 50px;
+  padding: 0.2rem 0;
+  font-weight: bold;
+}
+.container .note-wrapper .textarea-container .textarea-wrapper .textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 1rem;
+  outline: none;
+  font-size: 18px;
+  border: none;
+}
+.container .note-wrapper .textarea-container .textarea-wrapper .btn-delete-note {
+  padding: 0.5rem;
+  aspect-ratio: 1/1;
+  width: 30px;
+  display: grid;
+  align-content: center;
+  position: absolute;
+  right: 1%;
+  bottom: 2%;
+  border-radius: 50%;
+  background-color: crimson;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+.container .note-wrapper .textarea-container .textarea-wrapper .btn-delete-note:active {
+  background-color: #860000;
+}
+
+@media (width <= 768px) {
+  .container {
+    padding: 0 1rem;
+    min-height: 90vh;
+  }
+  .container .textarea-wrapper {
+    width: 100% !important;
+    min-height: 150px !important;
+  }
+  .container .textarea-wrapper .textarea {
+    min-height: 150px !important;
+  }
+}
+
+/*# sourceMappingURL=custom.css.map */

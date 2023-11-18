@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    background: linear-gradient(45deg, lightgreen, lightblue);
+}
+    .container {
+        max-width: 900px;
+        min-height: 100vh;
+        margin: auto;
+        padding: 0 3rem;
+        
+
+        .note-wrapper {
+            margin-top: 3rem;
+
+            h1 {
+                margin-bottom: 1rem;
+                font-size: 55px;
+                color: #290029;
+            }
+            .btn-add-note {
+                padding: 1rem 2rem;
+                margin-bottom: 1rem;
+                cursor: pointer;
+                border-radius: 50px;
+                border: none;
+                font-size: 18px;
+                background-color: purple;
+                color: #fff;
+
+                &:active {
+                    background-color: #5a005a;
+                }                
+            }
+
+            .textarea-container {
+
+                
+
+                .textarea-wrapper {
+                    width: 450px;
+                    min-height: 200px;
+                    margin-top: 2rem;
+                    margin-bottom: 4rem;
+                    background-color: #fff;
+                    position: relative;
+                    // overflow: hidden;   
+                    border-radius: 10px;       
+                    position: relative;    
+                    
+                    .note-title {
+                        transform: translateY(-30px);
+                        position: absolute;
+                        min-width: 50px;
+                        padding: 0.2rem 0;
+                        font-weight: bold;
+                    
+                    }
+
+                    .textarea  {
+                        width: 100%;
+                        min-height: 200px;
+                        padding: 1rem;
+                        outline: none;
+                        font-size: 18px;
+                        border: none;
+                        
+                    }
+
+                    .btn-delete-note {
+                        padding: .5rem;
+                        aspect-ratio: 1 / 1;
+                        width: 30px;
+                        display: grid;
+                        align-content: center;
+                        position: absolute;
+                        right: 1%;
+                        bottom: 2%;
+                        border-radius: 50%;
+                        background-color: crimson;
+                        color: #fff;
+                        border: none;
+                        cursor: pointer;
+                        font-size: 18px;
+                        &:active {
+                            background-color: #860000;
+                        }
+                    }
+
+                    
+
+                }
+            }
+        }
+    }
+
+
+@media  (width <= 768px) {
+    .container {
+        padding: 0 1rem;
+        min-height: 90vh;
+
+        .textarea-wrapper {
+            width: 100% !important;
+            min-height: 150px !important;
+
+            .textarea {
+               min-height: 150px !important;
+            }
+        }
+        
+    }
+}
