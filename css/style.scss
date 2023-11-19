@@ -99,7 +99,7 @@ body {
     }
 
 
-@media  (width <= 768px) {
+@media  (max-width: 768px) {
     .container {
         padding: 0 1rem;
         min-height: 90vh;
