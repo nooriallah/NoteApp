@@ -61,7 +61,11 @@ body {
   font-size: 18px;
   border: none;
 }
-.container .note-wrapper .textarea-container .textarea-wrapper .btn-delete-note {
+.container
+  .note-wrapper
+  .textarea-container
+  .textarea-wrapper
+  .btn-delete-note {
   padding: 0.5rem;
   aspect-ratio: 1/1;
   width: 30px;
@@ -77,11 +81,15 @@ body {
   cursor: pointer;
   font-size: 18px;
 }
-.container .note-wrapper .textarea-container .textarea-wrapper .btn-delete-note:active {
+.container
+  .note-wrapper
+  .textarea-container
+  .textarea-wrapper
+  .btn-delete-note:active {
   background-color: #860000;
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
   .container {
     padding: 0 1rem;
     min-height: 90vh;
