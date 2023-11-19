@@ -62,7 +62,6 @@ body {
   border: none;
 }
 .container .note-wrapper .textarea-container .textarea-wrapper .btn-delete-note {
-  padding: 0.5rem;
   height: 30px;
   width: 30px;
   display: grid;
