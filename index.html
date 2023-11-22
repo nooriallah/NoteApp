@@ -5,16 +5,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Note App</title>
-
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/custom.css ">
     </head>
 
     <body>
         <div class="container">
             <div class="note-wrapper">
-                <video controls width="300">
-                    <source src="design_section_video.webm">
-                </video>
+
                 <h1>Notes</h1>
                 <button class="btn-add-note">Create Notes +</button>
 
@@ -40,7 +38,8 @@
         let i = 0;
         // when clcik over add note button 
         btnAdd.addEventListener("click", () => {
-            i++;
+
+            i++; // it for title counting
 
             let textareaWrapper = document.createElement("div");
             let noteTitle = document.createElement("p")
@@ -86,7 +85,8 @@
             }
             else if (evt.target.className == "note-title") {
                 titles = document.querySelectorAll(".note-title")
-                Array.from(titles).forEach((title => {
+
+                titles.forEach((title => {
                     title.addEventListener("keyup", () => {
                         updateStorage();
                         console.log("Title changing...");
